@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0C0C0C;
+	--text-primary: #9B3922;
+	--text-dark: #481E14;
+	--text-hover: #F2613F;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body.lock {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  flex: 1 1 auto;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-[1920px] px-[20px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px];
+  }
+  .basic-transition {
+    @apply transition-all duration-300 ease-in;
+  }
+}
+
+
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear {
+  display: none;
+}
+
+input[type='password']::-webkit-textfield-decoration-container {
+  display: none;
+}
+
+input[type='password']::-webkit-input-placeholder {
+  background: none;
+  -webkit-appearance: none;
+}
+
+input[type='password']::-moz-placeholder {
+  background: none;
+}
+
+input[type='password']::-ms-input-placeholder {
+  background: none;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
