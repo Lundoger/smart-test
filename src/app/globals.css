@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #0c0c0c;
-  --text-primary: #9b3922;
-  --text-dark: #481e14;
-  --text-hover: #f2613f;
+  --bg-primary: #1e201e;
+  --bg-secondary: #3c3d37;
+  --text-primary: #ecdfcc;
+  --text-dark: #697565;
 }
 
 html,
@@ -18,12 +18,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-body.lock {
-  overflow: hidden;
-  touch-action: none;
-  overscroll-behavior: none;
 }
 
 .wrapper {
@@ -52,10 +46,10 @@ body.lock {
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-[1920px] px-[20px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px];
+    @apply mx-auto max-w-screen-lg px-4;
   }
   .basic-transition {
-    @apply transition-all duration-300 ease-in;
+    @apply transition-all duration-200 ease-in;
   }
 }
 
@@ -85,4 +79,24 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #ecdfcc;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
