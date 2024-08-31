@@ -5,11 +5,10 @@ import Loader from '@/components/shared/Loader';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/store/hook';
 import { setUsers } from '@/store/slices/smartSlice';
-import { useDebounce } from '@/hooks/useDebounce';
 
 const UsersList = () => {
   const { data, isError, isLoading } = useGetAllUsersQuery();
-  const { users, search } = useAppSelector((state) => state.smartSlice);
+  const { users } = useAppSelector((state) => state.smartSlice);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
