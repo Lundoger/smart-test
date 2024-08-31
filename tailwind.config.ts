@@ -13,9 +13,9 @@ const config: Config = {
       },
       colors: {
         bgPrimary: 'var(--bg-primary)',
+        bgSecondary: 'var(--bg-secondary)',
         textPrimary: 'var(--text-primary)',
         textDark: 'var(--text-dark)',
-        textHover: 'var(--text-hover)',
       },
       screens: {
         xs: '380px',
