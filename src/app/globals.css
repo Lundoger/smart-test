@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #0C0C0C;
-	--text-primary: #9B3922;
-	--text-dark: #481E14;
-	--text-hover: #F2613F;
+  --bg-primary: #0c0c0c;
+  --text-primary: #9b3922;
+  --text-dark: #481e14;
+  --text-hover: #f2613f;
 }
 
 html,
@@ -58,7 +58,6 @@ body.lock {
     @apply transition-all duration-300 ease-in;
   }
 }
-
 
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
