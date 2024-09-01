@@ -1,12 +1,12 @@
 import React from 'react';
 import UsersList from './users-list/UsersList';
-import SearchBar from './search-bar/SearchBar';
+import SearchFields from './search-fields/SearchFields';
 
 const MainPage = () => {
   return (
     <main className="py-14">
       <div className="container">
-        <SearchBar />
+        <SearchFields />
         <UsersList />
       </div>
     </main>

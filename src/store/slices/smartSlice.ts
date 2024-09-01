@@ -1,29 +1,45 @@
-import { IUser, Users } from '@/types/user';
+import { IUser } from '@/types/user';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface state {
-  search: string;
   users: IUser[];
+  username: string;
+  name: string;
+  email: string;
+  phone: string;
 }
 
 const initialState: state = {
-  search: '',
   users: [],
+  username: '',
+  name: '',
+  email: '',
+  phone: '',
 };
 
 export const smartSlice = createSlice({
   name: 'smart',
   initialState,
   reducers: {
-    setSearch(state, action: PayloadAction<string>) {
-      state.search = action.payload;
-    },
     setUsers(state, action: PayloadAction<IUser[]>) {
       state.users = action.payload;
+    },
+    setUserName(state, action: PayloadAction<string>) {
+      state.username = action.payload;
+    },
+    setName(state, action: PayloadAction<string>) {
+      state.name = action.payload;
+    },
+    setEmail(state, action: PayloadAction<string>) {
+      state.email = action.payload;
+    },
+    setPhone(state, action: PayloadAction<string>) {
+      state.phone = action.payload;
     },
   },
 });
 
-export const { setSearch, setUsers } = smartSlice.actions;
+export const { setUsers, setUserName, setName, setEmail, setPhone } =
+  smartSlice.actions;
 
 export default smartSlice.reducer;

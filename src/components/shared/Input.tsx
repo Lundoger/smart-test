@@ -11,7 +11,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { className, hasError, placeholder, onClear, value, ...props },
+  { className, hasError, placeholder, type = 'text', onClear, value, ...props },
   ref
 ) {
   {
@@ -28,7 +28,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         <label className={clsx('block h-[50px] rounded-lg bg-transparent')}>
           <span
             className={clsx(
-              'basic-transition absolute left-5 top-[25px] -translate-y-[50%] text-textDark',
+              'basic-transition absolute left-5 -translate-y-[50%] text-textDark',
+              !isFocus && 'top-[25px]',
               isFocus && 'top-[13px] text-sm'
             )}
           >
@@ -37,13 +38,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           <input
             {...props}
             className={clsx(
-              'basic-transition border-bgSecondary h-full w-full rounded-lg border-2 border-solid bg-transparent pl-[20px] pr-[40px] pt-[20px] text-sm outline-none',
+              'basic-transition h-full w-full rounded-lg border-2 border-solid border-bgSecondary bg-transparent pl-[20px] pr-[40px] pt-[20px] text-sm outline-none',
               isFocus && 'border-textDark',
               hasError && 'border-red-700 text-red-700'
             )}
             onBlur={handleOnBlur}
             onFocus={() => setIsFocus(true)}
-            type="text"
+            type={type}
             ref={ref}
             value={value}
           />
