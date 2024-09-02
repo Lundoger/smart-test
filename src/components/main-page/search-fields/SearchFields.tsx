@@ -6,7 +6,7 @@ import PhoneField from './phone-field/PhoneField';
 
 const SearchFields = () => {
   return (
-    <div className="mb-8 flex flex-col gap-5">
+    <div className="flex flex-col gap-5 lg:mb-8">
       <UserNameField />
       <NameField />
       <EmailField />
