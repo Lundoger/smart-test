@@ -41,10 +41,10 @@ const UsersList = () => {
       {users && users.length > 0 && (
         <div className="basis-full">
           <div className="relative mb-5 grid grid-cols-4 gap-4 p-3">
-            <div>Username</div>
-            <div>Name</div>
-            <div>Email</div>
-            <div>Phone</div>
+            <div className="max-lg:hidden">Username</div>
+            <div className="max-lg:hidden">Name</div>
+            <div className="max-lg:hidden">Email</div>
+            <div className="max-lg:hidden">Phone</div>
             <span className="absolute bottom-0 left-0 h-[1px] w-full bg-textDark"></span>
           </div>
           <ul className="grid grid-cols-1 gap-5">
